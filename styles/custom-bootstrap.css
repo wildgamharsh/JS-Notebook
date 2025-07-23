@@ -1,0 +1,45 @@
+:root {
+  --bs-primary: #402e7a;
+  --bs-secondary: #4c3bcf;
+  --bs-success: #4b70f5;
+  --bs-info: #3dc2ec;
+  --bs-light: #f8f9fa;
+  --bs-dark: #212529;
+  --bs-body-bg: var(--bs-light);
+  --bs-body-color: #212529;
+}
+[data-theme="dark"] {
+  --bs-body-bg: #212529;
+  --bs-body-color: #f8f9fa;
+  --bs-primary: #4c3bcf;
+  --bs-secondary: #402e7a;
+  --bs-success: #4b70f5;
+  --bs-info: #3dc2ec;
+  --bs-light: #212529;
+  --bs-dark: #f8f9fa;
+}
+.bg-primary {
+  background: linear-gradient(90deg, #402e7a 0%, #4c3bcf 100%) !important;
+}
+.btn-primary,
+.btn-info,
+.btn-success,
+.btn-dark {
+  transition: box-shadow 0.2s, background 0.2s;
+}
+.btn-primary:hover,
+.btn-info:hover,
+.btn-success:hover,
+.btn-dark:hover {
+  box-shadow: 0 0 8px 2px rgba(76, 59, 207, 0.2);
+  filter: brightness(1.08);
+}
+.card {
+  border-radius: 1rem;
+  box-shadow: 0 2px 16px 0 rgba(64, 46, 122, 0.08);
+  margin-bottom: 1.5rem;
+  transition: box-shadow 0.2s;
+}
+.card:hover {
+  box-shadow: 0 4px 32px 0 rgba(76, 59, 207, 0.12);
+}

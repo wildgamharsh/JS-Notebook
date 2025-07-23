@@ -1,0 +1,10 @@
+Javascript Notebook
+
+A jupyter-notebook inspired design of javascript tester that scans a script.js and then performs some actions in code cells that are able to get the variables and other content from the script.js and also define some new things to experiment and learn more
+
+Features
+
+- Autocompletion of all variables, properties and methods like in vscode.
+- All code can be stored in files (.jsnb) containing the code cells.
+- Also all the code should be stored in the localstorage to avoid code loss.
+- The code cells are

@@ -1,0 +1,185 @@
+/* Utility hidden class for toggling visibility */
+.hidden {
+  display: none !important;
+}
+/* Navbar dark purple theme */
+.navbar {
+  background: #231942 !important;
+  border-bottom: 2px solid #3d246c;
+  box-shadow: 0 4px 24px 0 #3d246c55;
+}
+.navbar .navbar-brand,
+.navbar .nav-link,
+.navbar .navbar-text,
+.navbar .badge {
+  color: #fff !important;
+  text-shadow: 0 0 6px #3d246c99;
+}
+.navbar .btn,
+.navbar .btn-primary,
+.navbar .btn-info,
+.navbar .btn-success,
+.navbar .btn-dark,
+.navbar .btn-secondary {
+  background: #5f4bb6 !important;
+  color: #fff !important;
+  border: none;
+  box-shadow: 0 2px 8px 0 #3d246c99;
+  font-weight: 600;
+  transition: background 0.18s, box-shadow 0.18s, filter 0.18s;
+}
+.navbar .btn:hover,
+.navbar .btn:focus {
+  filter: brightness(1.08) drop-shadow(0 0 8px #a259f7cc);
+  box-shadow: 0 4px 16px 0 #a259f7cc;
+}
+.navbar .btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #a259f7, 0 4px 16px 0 #3d246c99;
+}
+body,
+.notebook-main {
+  background: #1a1333 !important;
+  min-height: 100vh;
+  color: #fff;
+}
+
+#notebook,
+.notebook-area {
+  min-height: 70vh;
+  max-width: 860px;
+  margin-top: 0;
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+}
+
+.cell-card {
+  background: #231942;
+  color: #fff;
+  border: none;
+  margin-bottom: 2.2rem;
+  box-shadow: 0 4px 32px 0 #3d246c99, 0 1.5px 8px 0 #5f4bb6cc;
+  border-radius: 1.2rem;
+  transition: box-shadow 0.25s, background 0.25s, transform 0.18s;
+  padding: 1.4rem 1.4rem 1.1rem 1.4rem;
+  position: relative;
+  min-width: 0;
+  overflow: visible;
+  animation: cellFadeIn 0.7s;
+}
+.cell-card:hover {
+  box-shadow: 0 8px 40px 0 #3d246ccc, 0 2px 16px 0 #5f4bb6cc;
+  transform: translateY(-2px) scale(1.012);
+  background: #2d1457;
+}
+.cell-toolbar {
+  display: flex;
+  gap: 0.7rem;
+  margin-bottom: 0.7rem;
+  align-items: center;
+}
+.cell-toolbar .execution-count {
+  font-size: 1.05em;
+  color: #a259f7;
+  margin-right: 0.7em;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  text-shadow: 0 0 6px #a259f7cc;
+}
+.cell-editor {
+  min-height: 100px;
+  border-radius: 0.7rem;
+  overflow: hidden;
+  margin-bottom: 0.7rem;
+  border: 1.5px solid #a259f7;
+  border: 1.5px solid #5f4bb6;
+  box-shadow: 0 1px 8px 0 #ff4fa355;
+  box-shadow: 0 1px 8px 0 #3d246c55;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+.cell-card:focus-within .cell-editor,
+.cell-card.selected .cell-editor {
+  border: 1.5px solid #a259f7;
+  box-shadow: 0 0 0 2px #a259f799;
+}
+.cell-duplicate-anim {
+  animation: fadeIn 0.5s, cellPop 0.5s;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes cellFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.98) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes cellPop {
+  0% {
+    box-shadow: 0 0 0 0 #ff4fa355;
+  }
+  60% {
+    box-shadow: 0 0 0 16px #a259f7cc;
+  }
+  100% {
+    box-shadow: 0 4px 32px 0 #a259f780;
+  }
+}
+.cell-card.selected,
+.cell-card:focus {
+  outline: 2.5px solid #a259f7;
+  box-shadow: 0 0 0 2.5px #a259f7, 0 4px 32px 0 #3d246c99;
+}
+.cell-card .btn,
+.cell-card .btn-success,
+.cell-card .btn-info,
+.cell-card .btn-danger {
+  min-width: 2.2em;
+  font-weight: 600;
+  border: none;
+  background: #5f4bb6 !important;
+  color: #fff;
+  box-shadow: 0 2px 8px 0 #3d246c99;
+  transition: background 0.18s, box-shadow 0.18s, filter 0.18s;
+}
+.cell-card .btn:hover,
+.cell-card .btn:focus {
+  filter: brightness(1.08) drop-shadow(0 0 8px #a259f7cc);
+  box-shadow: 0 4px 16px 0 #a259f7cc;
+}
+.cell-card .btn svg {
+  vertical-align: middle;
+}
+.cell-card .btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #a259f7, 0 4px 16px 0 #3d246c99;
+}
+.cell-output {
+  background: #111016;
+  color: #fff;
+  border-radius: 0.7rem;
+  margin-top: 1.1rem;
+  margin-bottom: 0.2rem;
+  padding: 1.1rem 1.2rem;
+  font-family: "Fira Mono", "Consolas", monospace;
+  font-size: 1.08rem;
+  min-height: 1.7em;
+  border: 1.5px solid #23223a;
+  box-shadow: 0 2px 16px 0 #0008, 0 1px 8px 0 #3d246c55;
+  transition: background 0.2s, box-shadow 0.2s;
+  animation: fadeIn 0.5s;
+  word-break: break-word;
+  white-space: pre-wrap;
+  overflow-x: auto;
+}
