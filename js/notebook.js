@@ -444,4 +444,12 @@ window.addEventListener("keydown", (e) => {
     }
     return;
   }
+  // Add Shift+Enter shortcut to run code cells
+  if (e.key === "Enter" && e.shiftKey) {
+    const focusedCell = window.NotebookCell.getFocused();
+    if (focusedCell && focusedCell.onRun) {
+      e.preventDefault();
+      focusedCell.onRun(focusedCell);
+    }
+  }
 });
